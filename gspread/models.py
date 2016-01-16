@@ -59,7 +59,10 @@ class Spreadsheet(object):
 
     @property
     def id(self):
-        return self._feed_entry.find(_ns('id')).text.split('/')[-1]
+        result = self._feed_entry.find(_ns('id')).text.split('/')[-1]
+        if result == 'full':
+            result = self._feed_entry.find(_ns('id')).text.split('/')[-3]
+        return result
 
     def get_id_fields(self):
         return {'spreadsheet_id': self.id}

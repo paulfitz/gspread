@@ -9,6 +9,12 @@ key:
 url:
 sheet1_title:
 
+[PublicSpreadsheet]
+title:
+key:
+url:
+sheet1_title:
+
 [Worksheet]
 id:
 title:
