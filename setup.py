@@ -16,33 +16,36 @@ if sys.argv[-1] == 'publish':
 def read(filename):
     return open(os.path.join(os.path.dirname(__file__), filename)).read()
 
-description = 'Google Spreadsheets Python API'
+description = 'Tiny gspread fork to support public spreadsheets'
 
 long_description = """
-{index}
+A tweaked version of gspread:
+  * Supports public, published spreadsheets.
+  * Preserves unset cell values as null versus ''.
+
+All credit for gspread to Anton Burnashev fuss.here@gmail.com and others,
+this is just a tiny fork.
 
 License
 -------
 MIT
 
-Download
-========
 """
 
-long_description = long_description.lstrip("\n").format(index=read('docs/index.txt'))
+long_description = long_description.lstrip("\n")
 
 version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
                     read('gspread/__init__.py'), re.MULTILINE).group(1)
 
 setup(
-    name='gspread',
+    name='gspread_public',
     packages=['gspread'],
     description=description,
     long_description=long_description,
     version=version,
-    author='Anton Burnashev',
-    author_email='fuss.here@gmail.com',
-    url='https://github.com/burnash/gspread',
+    author='Paul Fitzpatrick',
+    author_email='paulfitz@alum.mit.edu',
+    url='https://github.com/paulfitz/gspread',
     keywords=['spreadsheets', 'google-spreadsheets'],
     install_requires=['requests>=2.2.1'],
     classifiers=[
