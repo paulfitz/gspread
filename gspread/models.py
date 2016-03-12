@@ -637,7 +637,7 @@ class Cell(object):
         self.numeric_value = float(numeric_value) if numeric_value else None
 
         #: Value of the cell.
-        self.value = cell_elem.text or ''
+        self.value = cell_elem.text
 
     @property
     def row(self):
